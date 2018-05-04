@@ -3,13 +3,12 @@ package module2.globant.calculator.bus;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
-import com.globant.counter.android.util.bus.observers.BusObserver;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.subjects.PublishSubject;
+import module2.globant.calculator.bus.observers.BusObserver;
 
 public class RxBus {
     private static Map<Activity, CompositeDisposable> disposableMap = new HashMap<>();
