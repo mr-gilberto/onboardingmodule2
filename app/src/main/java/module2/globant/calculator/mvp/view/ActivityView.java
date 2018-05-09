@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import java.lang.ref.WeakReference;
 
 public class ActivityView {
+
+
     private WeakReference<Activity> activityRef;
 
     public ActivityView(Activity activity) {
@@ -29,4 +31,6 @@ public class ActivityView {
         Activity activity = getActivity();
         return (activity != null) ? activity.getFragmentManager() : null;
     }
+
+
 }
