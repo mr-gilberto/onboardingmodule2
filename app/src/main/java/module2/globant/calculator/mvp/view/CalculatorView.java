@@ -61,6 +61,12 @@ public class CalculatorView extends ActivityView {
         RxBus.post(new OperationButtonBusObserver.OperationButtonButton(Constants.SUM));
     }
 
+    @OnClick(R.id.subtraction_button)
+    public void subTractionButtonPressed() {
+        RxBus.post(new OperationButtonBusObserver.OperationButtonButton(Constants.SUBTRACTION));
+    }
+
+
 
     @OnClick(R.id.result_button)
     public void resultButtonPressed() {

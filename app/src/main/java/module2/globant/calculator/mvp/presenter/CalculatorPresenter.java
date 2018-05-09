@@ -2,6 +2,7 @@ package module2.globant.calculator.mvp.presenter;
 
 import android.app.Activity;
 
+import module2.globant.calculator.Constants.Constants;
 import module2.globant.calculator.R;
 import module2.globant.calculator.Utils;
 import module2.globant.calculator.bus.RxBus;
@@ -52,9 +53,16 @@ public class CalculatorPresenter {
             @Override
             public void onEvent(OperationButtonButton value) {
 
-                view.setOperationSymbol(R.string.main_plus_button);
-
-                model.setOperation(value.getOperation());
+                switch (value.getOperation()){
+                    case Constants.SUM:
+                        view.setOperationSymbol(R.string.main_plus_button);
+                        model.setOperation(value.getOperation());
+                        break;
+                    case Constants.SUBTRACTION:
+                        view.setOperationSymbol(R.string.main_subtraction_button);
+                        model.setOperation(value.getOperation());
+                        break;
+                }
             }
         });
 
