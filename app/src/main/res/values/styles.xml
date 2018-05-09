@@ -16,6 +16,7 @@
         <item name="android:gravity">right</item>
         <item name="android:hint">@string/main_zero_hint</item>
         <item name="android:text">@string/main_zero_hint</item>
+        <item name="android:imeOptions">actionDone</item>
     </style>
 
 
