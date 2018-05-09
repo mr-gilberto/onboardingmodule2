@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">calculator</string>
+
+    <string name="main_calculator">calculator</string>
+    <string name="main_zero_hint">0</string>
+
+    <string name="main_plus_button">+</string>
+    <string name="main_minus_button">-</string>
+    <string name="main_divide_button">/</string>
+    <string name="main_multiply_button">*</string>
+    <string name="main_multiply_equals">=</string>
+    <string name="main_select_an_action_text">Select an action</string>
+
+    <string name="input_digits_numbers" translatable="false">1234567890+.*/</string>
+
+
+</resources>
