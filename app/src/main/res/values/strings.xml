@@ -14,5 +14,6 @@
     <string name="input_digits_numbers" translatable="false">1234567890+.*/</string>
 
     <string name="error_field_one_number_not_valid">Put a valid number</string>
+    <string name="error_divide_not_valid">Do not divide by 0</string>
 
 </resources>

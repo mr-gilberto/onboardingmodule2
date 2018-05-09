@@ -67,6 +67,17 @@ public class CalculatorView extends ActivityView {
     }
 
 
+    @OnClick(R.id.multiply_button)
+    public void multiplyButtonPressed() {
+        RxBus.post(new OperationButtonBusObserver.OperationButtonButton(Constants.MULTIPLY));
+    }
+
+
+    @OnClick(R.id.divide_button)
+    public void divideButtonPressed() {
+        RxBus.post(new OperationButtonBusObserver.OperationButtonButton(Constants.DIVIDE));
+    }
+
 
     @OnClick(R.id.result_button)
     public void resultButtonPressed() {

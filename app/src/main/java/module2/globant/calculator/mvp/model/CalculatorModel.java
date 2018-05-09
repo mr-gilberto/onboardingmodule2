@@ -18,8 +18,12 @@ public class CalculatorModel {
         switch (operation) {
             case Constants.SUM:
                 return a + b;
-                case Constants.SUBTRACTION:
-                    return a - b;
+            case Constants.SUBTRACTION:
+                return a - b;
+            case Constants.MULTIPLY:
+                return a * b;
+            case Constants.DIVIDE:
+                return a / b;
             default:
                 return 0;
         }

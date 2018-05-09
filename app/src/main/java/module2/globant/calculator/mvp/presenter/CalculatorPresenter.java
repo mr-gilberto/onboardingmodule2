@@ -37,6 +37,9 @@ public class CalculatorPresenter {
         } else if (!Utils.isValidNumber(view.getFieldTwo())) {
             validated = false;
             view.showToastError(R.string.error_field_one_number_not_valid);
+        }else if(model.getOperation() == Constants.DIVIDE && Double.parseDouble(view.getFieldTwo()) == 0){
+            view.showToastError(R.string.error_divide_not_valid);
+            validated = false;
         }
 
         return validated;
@@ -60,6 +63,14 @@ public class CalculatorPresenter {
                         break;
                     case Constants.SUBTRACTION:
                         view.setOperationSymbol(R.string.main_subtraction_button);
+                        model.setOperation(value.getOperation());
+                        break;
+                    case Constants.MULTIPLY:
+                        view.setOperationSymbol(R.string.main_multiply_button);
+                        model.setOperation(value.getOperation());
+                        break;
+                    case Constants.DIVIDE:
+                        view.setOperationSymbol(R.string.main_divide_button);
                         model.setOperation(value.getOperation());
                         break;
                 }
