@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="EditTextNumber">
+        <item name="android:maxLength">9</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:digits">1234567890.-</item>
+        <item name="android:gravity">right</item>
+        <item name="android:hint">@string/main_zero_hint</item>
+        <item name="android:text">@string/main_zero_hint</item>
+    </style>
+
+
 </resources>
