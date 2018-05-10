@@ -4,7 +4,7 @@ import module2.globant.calculator.Constants.Constants;
 
 public class CalculatorModel {
 
-    private int operation = Constants.SUM;
+    @Constants.Operations int operation = Constants.SUM;
 
     public void setOperation(int operation) {
         this.operation = operation;
@@ -14,7 +14,7 @@ public class CalculatorModel {
         return operation;
     }
 
-    public double doOperation(int operation, double a, double b) {
+    public double doOperation(double a, double b) {
         switch (operation) {
             case Constants.SUM:
                 return a + b;

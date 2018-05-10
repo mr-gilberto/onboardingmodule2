@@ -2,7 +2,6 @@ package module2.globant.calculator.mvp.presenter;
 
 import android.app.Activity;
 
-import module2.globant.calculator.Constants.Constants;
 import module2.globant.calculator.R;
 import module2.globant.calculator.Utils;
 import module2.globant.calculator.bus.RxBus;
@@ -21,13 +20,11 @@ public class CalculatorPresenter {
         this.view = view;
     }
 
-
     public void onResultButtonPressed() {
         if (validated()) {
-            view.setResultLabel(String.valueOf(model.doOperation(model.getOperation(), Double.parseDouble(view.getFieldOne()), Double.parseDouble(view.getFieldTwo()))));
+            view.setResultLabel(String.valueOf(model.doOperation(Double.parseDouble(view.getFieldOne()), Double.parseDouble(view.getFieldTwo()))));
         }
     }
-
 
     public boolean validated() {
         boolean validated = true;
@@ -45,44 +42,28 @@ public class CalculatorPresenter {
     public void register() {
         Activity activity = view.getActivity();
 
-        if (activity == null) {
-            return;
-        }
-
-        RxBus.subscribe(activity, new OperationButtonBusObserver() {
-            @Override
-            public void onEvent(OperationButtonButton value) {
-
-                switch (value.getOperation()){
-                    case Constants.SUM:
-                        view.setOperationSymbol(R.string.main_plus_button);
-                        model.setOperation(value.getOperation());
-                        break;
-                    case Constants.SUBTRACTION:
-                        view.setOperationSymbol(R.string.main_subtraction_button);
-                        model.setOperation(value.getOperation());
-                        break;
+        if (activity != null) {
+            RxBus.subscribe(activity, new OperationButtonBusObserver() {
+                @Override
+                public void onEvent(OperationButtonButton value) {
+                    view.setOperationSymbol(R.string.main_plus_button);
+                    model.setOperation(value.getOperation());
                 }
-            }
-        });
+            });
 
-
-        RxBus.subscribe(activity, new ResultButtonBusObserver() {
-            @Override
-            public void onEvent(ResultButtonButton value) {
-                onResultButtonPressed();
-            }
-        });
-
+            RxBus.subscribe(activity, new ResultButtonBusObserver() {
+                @Override
+                public void onEvent(ResultButtonButton value) {
+                    onResultButtonPressed();
+                }
+            });
+        }
     }
-
 
     public void unregister() {
         Activity activity = view.getActivity();
-
-        if (activity == null) {
-            return;
+        if (activity != null) {
+            RxBus.clear(activity);
         }
-        RxBus.clear(activity);
     }
 }

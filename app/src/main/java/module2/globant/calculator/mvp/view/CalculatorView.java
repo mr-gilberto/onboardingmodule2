@@ -16,18 +16,10 @@ import module2.globant.calculator.bus.observers.ResultButtonBusObserver;
 
 public class CalculatorView extends ActivityView {
 
-    @BindView(R.id.result_label)
-    TextView resultLabel;
-
-    @BindView(R.id.operation_symbol_label)
-    TextView operationSymbolLabel;
-
-    @BindView(R.id.field_one_edittext)
-    EditText fieldOneEditText;
-
-    @BindView(R.id.field_two_edittext)
-    EditText fieldTwoEditText;
-
+    @BindView(R.id.result_label) TextView resultLabel;
+    @BindView(R.id.operation_symbol_label) TextView operationSymbolLabel;
+    @BindView(R.id.field_one_edittext) EditText fieldOneEditText;
+    @BindView(R.id.field_two_edittext) EditText fieldTwoEditText;
 
     public CalculatorView(Activity activity) {
         super(activity);
@@ -46,7 +38,6 @@ public class CalculatorView extends ActivityView {
         return fieldTwoEditText.getText().toString();
     }
 
-
     public void setResultLabel(String result) {
         resultLabel.setText(result);
     }
@@ -54,7 +45,6 @@ public class CalculatorView extends ActivityView {
     public void setOperationSymbol(int operationSymbol) {
         operationSymbolLabel.setText(operationSymbol);
     }
-
 
     @OnClick(R.id.sum_button)
     public void sumButtonPressed() {
@@ -66,12 +56,9 @@ public class CalculatorView extends ActivityView {
         RxBus.post(new OperationButtonBusObserver.OperationButtonButton(Constants.SUBTRACTION));
     }
 
-
-
     @OnClick(R.id.result_button)
     public void resultButtonPressed() {
         RxBus.post(new ResultButtonBusObserver.ResultButtonButton());
     }
-
 
 }
