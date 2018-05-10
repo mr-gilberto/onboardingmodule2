@@ -10,7 +10,6 @@ import java.lang.ref.WeakReference;
 public class ActivityView {
 
     private WeakReference<Activity> activityRef;
-
     public ActivityView(Activity activity) {
         activityRef = new WeakReference<>(activity);
     }
