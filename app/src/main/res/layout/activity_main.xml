@@ -21,7 +21,7 @@
         android:gravity="center"
         android:textColor="@color/colorAccent"
         android:text="@string/main_plus_button"
-        android:textSize="18sp"/>
+        android:textSize="@dimen/size_all_text_regular_18"/>
 
     <EditText
         android:id="@+id/field_two_edittext"
@@ -93,7 +93,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/main_zero_hint"
-        android:textSize="27sp" />
+        android:textSize="@dimen/size_all_text_xbig_27" />
 
 
 </LinearLayout>

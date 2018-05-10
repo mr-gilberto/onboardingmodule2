@@ -20,13 +20,11 @@ public class CalculatorPresenter {
         this.view = view;
     }
 
-
     public void onResultButtonPressed() {
         if (validated()) {
-            view.setResultLabel(String.valueOf(model.doOperation(model.getOperation(), Double.parseDouble(view.getFieldOne()), Double.parseDouble(view.getFieldTwo()))));
+            view.setResultLabel(String.valueOf(model.doOperation(Double.parseDouble(view.getFieldOne()), Double.parseDouble(view.getFieldTwo()))));
         }
     }
-
 
     public boolean validated() {
         boolean validated = true;
@@ -44,37 +42,28 @@ public class CalculatorPresenter {
     public void register() {
         Activity activity = view.getActivity();
 
-        if (activity == null) {
-            return;
+        if (activity != null) {
+            RxBus.subscribe(activity, new OperationButtonBusObserver() {
+                @Override
+                public void onEvent(OperationButtonButton value) {
+                    view.setOperationSymbol(R.string.main_plus_button);
+                    model.setOperation(value.getOperation());
+                }
+            });
+
+            RxBus.subscribe(activity, new ResultButtonBusObserver() {
+                @Override
+                public void onEvent(ResultButtonButton value) {
+                    onResultButtonPressed();
+                }
+            });
         }
-
-        RxBus.subscribe(activity, new OperationButtonBusObserver() {
-            @Override
-            public void onEvent(OperationButtonButton value) {
-
-                view.setOperationSymbol(R.string.main_plus_button);
-
-                model.setOperation(value.getOperation());
-            }
-        });
-
-
-        RxBus.subscribe(activity, new ResultButtonBusObserver() {
-            @Override
-            public void onEvent(ResultButtonButton value) {
-                onResultButtonPressed();
-            }
-        });
-
     }
-
 
     public void unregister() {
         Activity activity = view.getActivity();
-
-        if (activity == null) {
-            return;
+        if (activity != null) {
+            RxBus.clear(activity);
         }
-        RxBus.clear(activity);
     }
 }

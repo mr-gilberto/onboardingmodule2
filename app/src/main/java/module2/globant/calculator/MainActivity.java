@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         calculatorPresenter = new CalculatorPresenter(new CalculatorModel(), new CalculatorView(this));
-
-
     }
 
     @Override
