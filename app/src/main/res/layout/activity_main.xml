@@ -8,15 +8,23 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/field_one_edittext"
         style="@style/EditTextNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/operation_symbol_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:text="@string/main_plus_button"
+        android:textSize="@dimen/size_all_text_regular_18"/>
 
     <EditText
+        android:id="@+id/field_two_edittext"
         style="@style/EditTextNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -37,12 +45,14 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/sum_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/main_plus_button" />
 
             <Button
+                android:id="@+id/minus_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -55,12 +65,14 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/divide_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/main_divide_button" />
 
             <Button
+                android:id="@+id/multiply_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,17 +81,19 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/result_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_multiply_equals" />
 
     <TextView
+        android:id="@+id/result_label"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/main_zero_hint"
-        android:textSize="@dimen/activity_vertical_margin" />
+        android:textSize="@dimen/size_all_text_xbig_27" />
 
 
 </LinearLayout>
