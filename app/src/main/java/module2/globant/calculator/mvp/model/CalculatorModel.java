@@ -18,7 +18,7 @@ public class CalculatorModel {
         switch (operation) {
             case Constants.SUM:
                 return a + b;
-                case Constants.SUBTRACTION:
+             case Constants.SUBTRACTION:
                     return a - b;
             default:
                 return 0;
