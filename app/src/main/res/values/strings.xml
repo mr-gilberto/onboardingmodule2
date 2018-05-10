@@ -2,10 +2,10 @@
     <string name="app_name">calculator</string>
 
     <string name="main_calculator">calculator</string>
-    <string name="main_zero_hint">0</string>
+    <string name="main_zero_hint">0.0</string>
 
     <string name="main_plus_button">+</string>
-    <string name="main_minus_button">-</string>
+    <string name="main_subtraction_button">-</string>
     <string name="main_divide_button">/</string>
     <string name="main_multiply_button">*</string>
     <string name="main_multiply_equals">=</string>
@@ -13,5 +13,7 @@
 
     <string name="input_digits_numbers" translatable="false">1234567890+.*/</string>
 
+    <string name="error_field_one_number_not_valid">Put a valid number</string>
+    <string name="error_divide_not_valid">Do not divide by 0</string>
 
 </resources>
