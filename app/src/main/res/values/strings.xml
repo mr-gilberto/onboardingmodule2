@@ -5,7 +5,7 @@
     <string name="main_zero_hint">0.0</string>
 
     <string name="main_plus_button">+</string>
-    <string name="main_minus_button">-</string>
+    <string name="main_subtraction_button">-</string>
     <string name="main_divide_button">/</string>
     <string name="main_multiply_button">*</string>
     <string name="main_multiply_equals">=</string>
